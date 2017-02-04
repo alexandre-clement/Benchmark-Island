@@ -10,10 +10,11 @@ def main():
                 json_object = json.load(json_file)
                 benchmark = Benchmark(json_object)
             print('file "' + file + '" : ')
+            print("\tbudget used  : ", benchmark.budget_used())
             print("\tcreek found  : ", benchmark.find_creek())
             print("\tsite found   : ", benchmark.find_emergency_site())
             print("\tcontracts    : ", benchmark.completed_contracts())
-            print("\tbudget used  : ", benchmark.get_percentage_budget_used())
+
             print("_" * 90)
             print()
 

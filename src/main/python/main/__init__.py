@@ -1,5 +1,6 @@
 import json
 
+
 class Path:
     source_file = "../../resources/out.json"
     source_path = "../../resources/"
@@ -24,6 +25,7 @@ class Resource:
 
 class JsonArguments:
     data = "data"
+    budget = "budget"
     contracts = "contracts"
     amount = 'amount'
     resource = 'resource'

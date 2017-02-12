@@ -27,11 +27,18 @@ def play_all_map():
         pass
 
     for json_file in glob.glob(os.path.join(change.newPath, "map/*.json")):
+        print("_" * 90)
+        print()
+        print(os.path.basename(json_file))
+        print()
         with changeDir(Path.java_path) as change:
             os.system("mvn exec:java -Dexec.args=" + json_file)
             pass
-        shutil.copy(os.path.join(os.path.join(change.newPath, Path.outputs_folder), Path.default_name), Path.source_path)
+        shutil.copy(os.path.join(change.newPath, Path.outputs_folder, Path.default_name), Path.source_path)
         shutil.move(os.path.join(Path.source_path, Path.default_name), os.path.join(Path.source_path + os.path.basename(json_file)))
+        print()
+        print(os.path.basename(json_file) + " copy done")
+        print()
 
 
 if __name__ == '__main__':

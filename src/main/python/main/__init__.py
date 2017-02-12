@@ -4,6 +4,10 @@ import json
 class Path:
     source_file = "../../resources/out.json"
     source_path = "../../resources/"
+    java_path = r"C:\Users\user\IdeaProjects\IslandIsBack"
+    map_folder = r"map"
+    outputs_folder = r"outputs"
+    default_name = "Explorer_Lian_Yu.json"
 
 
 class Resource:

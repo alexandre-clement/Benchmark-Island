@@ -4,7 +4,7 @@ import json
 class Path:
     source_file = "../../resources/out.json"
     source_path = "../../resources/"
-    java_path = r"C:\Users\user\IdeaProjects\IslandIsBack"
+    java_path = r"C:\Users\user\IdeaProjects\Island"
     map_folder = r"map"
     outputs_folder = r"outputs"
     default_name = "Explorer_Lian_Yu.json"
@@ -21,7 +21,7 @@ class Resource:
     fruits = "FRUITS"
     ore = "ORE"
     sugar_cane = "SUGAR_CANE"
-    glass = "glass"
+    glass = "GLASS"
     ingot = "INGOT"
     leather = "LEATHER"
     plank = "PLANK"

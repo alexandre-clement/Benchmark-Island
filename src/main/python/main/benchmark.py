@@ -61,6 +61,9 @@ class Benchmark:
         return [(exploited, contract.get_percentage(), self._get_step_percentage(contract.terminated))
                 for (exploited, contract) in completed_contract(self.json_object).items()]
 
+    def number_of_completed_contract(self):
+        return len([exploited for (exploited, contract) in completed_contract(self.json_object).items() if contract.is_complete()])
+
     def _get_step_percentage(self, step):
         return "%d%%" % (self.step_cost_table[step] * 100 / self.budget)
 
@@ -69,3 +72,4 @@ if __name__ == '__main__':
         json_test = json.load(source)
         benchmark = Benchmark(json_test)
         print(benchmark.completed_contracts())
+        print(benchmark.number_of_completed_contract())

@@ -12,6 +12,7 @@ def also_print_in_file(output_file, *args):
 def main():
     play_all_map()
     result = open(os.path.join(Path.source_path, "result.txt"), "w")
+    total_contracts_completed = 0
     for file in os.listdir(Path.source_path):
         if file.endswith('.json'):
             also_print_in_file(result, 'file "' + file + '" : ')
@@ -22,8 +23,12 @@ def main():
             also_print_in_file(result, "\tcreek found  : ", benchmark.find_creek())
             also_print_in_file(result, "\tsite found   : ", benchmark.find_emergency_site())
             also_print_in_file(result, "\tcontracts    : ", benchmark.completed_contracts())
+            completed_contracts = benchmark.number_of_completed_contract()
+            total_contracts_completed += completed_contracts
+            also_print_in_file(result, "\tcontracts completed : ", completed_contracts)
             also_print_in_file(result, "_" * 90)
             also_print_in_file(result)
+    also_print_in_file(result, "Benchmark score : ", total_contracts_completed)
 
 
 if __name__ == '__main__':
